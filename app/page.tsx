@@ -5,53 +5,55 @@ export default function Home() {
     <div className="bg-[#0c0b0b] text-[#f0ead8] min-h-screen">
 
       {/* NAV */}
-      <nav className="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-8 md:px-14 h-20 bg-[#0c0b0b]/80 backdrop-blur-md border-b border-[#c4a265]/12">
-        <Image src="/images/logo.svg" alt="Pall Mall Barbers" width={150} height={42} priority className="brightness-0 invert" />
-        <div className="hidden md:flex items-center gap-10 text-[11px] tracking-[0.3em] uppercase text-[#f0ead8]/55">
+      <nav className="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-5 sm:px-8 md:px-14 h-16 md:h-20 bg-[#0c0b0b]/88 backdrop-blur-md border-b border-[#c4a265]/12">
+        <Image src="/images/logo.svg" alt="Pall Mall Barbers" width={150} height={42} priority className="brightness-0 invert w-[105px] sm:w-[130px] md:w-[150px]" />
+        <div className="hidden md:flex items-center gap-8 lg:gap-10 text-[11px] tracking-[0.3em] uppercase text-[#f0ead8]/55">
           <a href="#services" className="hover:text-[#c4a265] transition-colors">Services</a>
           <a href="#gallery"  className="hover:text-[#c4a265] transition-colors">Gallery</a>
           <a href="#about"    className="hover:text-[#c4a265] transition-colors">About</a>
           <a href="#contact"  className="hover:text-[#c4a265] transition-colors">Contact</a>
         </div>
         <a href="https://www.pallmallbarbers.nyc/" target="_blank" rel="noopener noreferrer"
-          className="btn-shine relative overflow-hidden px-7 py-3 border border-[#c4a265] text-[#c4a265] text-[10px] tracking-[0.35em] uppercase font-semibold hover:bg-[#c4a265] hover:text-[#0c0b0b] transition-colors duration-300">
+          className="btn-shine relative overflow-hidden px-4 py-2.5 md:px-7 md:py-3 border border-[#c4a265] text-[#c4a265] text-[9px] md:text-[10px] tracking-[0.25em] md:tracking-[0.35em] uppercase font-semibold hover:bg-[#c4a265] hover:text-[#0c0b0b] transition-colors duration-300 whitespace-nowrap">
           Book Now
         </a>
       </nav>
 
       {/* HERO */}
-      <section className="relative min-h-screen flex flex-col justify-end overflow-hidden">
+      <section className="relative min-h-[100svh] flex flex-col justify-end overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/images/NYC-10.png" alt="Pall Mall Barbers New York" fill priority className="object-cover object-center" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0c0b0b] via-[#0c0b0b]/60 to-[#0c0b0b]/15" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0c0b0b]/70 to-transparent" />
+          <Image src="/images/NYC-10.png" alt="Pall Mall Barbers New York" fill priority className="object-cover object-[65%_center] md:object-center" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0c0b0b] via-[#0c0b0b]/70 to-[#0c0b0b]/25" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0c0b0b]/80 to-[#0c0b0b]/10" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-14 w-full pb-24 md:pb-32">
-          <p className="animate-rise-in text-[#c4a265] text-[10px] tracking-[0.55em] uppercase mb-7">Est. 1896 · Rockefeller Center, New York City</p>
-          <h1 className="animate-rise-in-2 font-[family-name:var(--font-cormorant)] text-6xl md:text-8xl xl:text-[6.5rem] font-light italic leading-[1.05] max-w-4xl mb-10">
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 md:px-14 w-full pt-28 md:pt-0 pb-10 sm:pb-20 md:pb-32">
+          <p className="animate-rise-in text-[#c4a265] text-[9px] sm:text-[10px] tracking-[0.4em] sm:tracking-[0.55em] uppercase mb-5 md:mb-7">
+            Est. 1896 · Rockefeller Center, New York City
+          </p>
+          <h1 className="animate-rise-in-2 font-[family-name:var(--font-cormorant)] text-[13vw] sm:text-[10vw] md:text-8xl xl:text-[6.5rem] font-light italic leading-[1.05] max-w-4xl mb-8 md:mb-10">
             The Finest Cut.<br />The Perfect Shave.<br />
             <span className="text-[#c4a265] not-italic font-medium">New York&apos;s Best.</span>
           </h1>
-          <div className="animate-rise-in-3 flex flex-col sm:flex-row gap-4 mb-16">
+          <div className="animate-rise-in-3 flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 md:mb-16">
             <a href="https://www.pallmallbarbers.nyc/" target="_blank" rel="noopener noreferrer"
-              className="btn-shine relative overflow-hidden inline-flex items-center justify-center px-12 py-4 bg-[#c4a265] text-[#0c0b0b] text-[10px] tracking-[0.4em] uppercase font-bold hover:bg-[#d4b478] transition-colors">
+              className="btn-shine relative overflow-hidden inline-flex items-center justify-center px-8 sm:px-12 py-4 bg-[#c4a265] text-[#0c0b0b] text-[9px] sm:text-[10px] tracking-[0.35em] sm:tracking-[0.4em] uppercase font-bold hover:bg-[#d4b478] transition-colors">
               Book Appointment
             </a>
             <a href="#services"
-              className="inline-flex items-center justify-center px-12 py-4 border border-[#f0ead8]/20 text-[#f0ead8]/65 text-[10px] tracking-[0.4em] uppercase hover:border-[#c4a265] hover:text-[#c4a265] transition-all duration-300">
+              className="inline-flex items-center justify-center px-8 sm:px-12 py-4 border border-[#f0ead8]/20 text-[#f0ead8]/65 text-[9px] sm:text-[10px] tracking-[0.35em] sm:tracking-[0.4em] uppercase hover:border-[#c4a265] hover:text-[#c4a265] transition-all duration-300">
               Our Services
             </a>
           </div>
-          <div className="flex flex-wrap gap-10 md:gap-16 border-t border-white/10 pt-10">
+          <div className="grid grid-cols-2 sm:grid-cols-4 border-t border-white/10 pt-8 md:pt-10 gap-x-0 gap-y-6 sm:gap-y-0 max-w-md sm:max-w-none">
             {heroStats.map((s) => (
-              <div key={s.label}>
-                <p className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-light text-[#c4a265]">{s.value}</p>
-                <p className="text-[10px] tracking-[0.3em] uppercase text-[#f0ead8]/35 mt-1">{s.label}</p>
+              <div key={s.label} className="sm:border-r border-white/8 last:border-r-0 sm:pr-8 sm:mr-8">
+                <p className="font-[family-name:var(--font-cormorant)] text-3xl sm:text-4xl md:text-5xl font-light text-[#c4a265]">{s.value}</p>
+                <p className="text-[9px] sm:text-[10px] tracking-[0.25em] sm:tracking-[0.3em] uppercase text-[#f0ead8]/35 mt-1">{s.label}</p>
               </div>
             ))}
           </div>
         </div>
-        <div className="absolute bottom-8 right-10 flex flex-col items-center gap-2 z-10">
+        <div className="absolute bottom-8 right-6 md:right-10 hidden sm:flex flex-col items-center gap-2 z-10">
           <p className="text-[9px] tracking-[0.4em] uppercase text-[#f0ead8]/25" style={{ writingMode: "vertical-rl" }}>Scroll</p>
           <div className="w-px h-14 bg-gradient-to-b from-[#c4a265]/40 to-transparent" />
         </div>
