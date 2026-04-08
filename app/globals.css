@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ffffff;
-  --gold: #C9A84C;
-  --gold-light: #e0bc6e;
+  --background: #0c0b0b;
+  --foreground: #f0ead8;
+  --gold: #c4a265;
+  --gold-hover: #d4b478;
+  --section-alt: #111110;
 }
 
 @theme inline {
@@ -12,6 +13,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-cormorant);
 }
 
 body {
@@ -21,63 +23,23 @@ body {
   overflow-x: hidden;
 }
 
-/* ── Text stroke ── */
-.text-stroke {
-  -webkit-text-stroke: 2px #ffffff;
-  color: transparent;
-}
-
-/* ── Animated vertical light lines in hero ── */
-.hero-line {
-  position: absolute;
-  width: 1px;
-  height: 100%;
-  background: linear-gradient(to bottom, transparent, rgba(201, 168, 76, 0.18), transparent);
-  animation: lineMove 9s ease-in-out infinite;
-}
-.hero-line-1 { left: 20%; animation-delay: 0s; }
-.hero-line-2 { left: 50%; animation-delay: 3s; opacity: 0.5; }
-.hero-line-3 { left: 80%; animation-delay: 6s; }
-
-@keyframes lineMove {
-  0%   { transform: translateY(-100%); opacity: 0; }
-  15%  { opacity: 1; }
-  85%  { opacity: 1; }
-  100% { transform: translateY(100%); opacity: 0; }
-}
-
-/* ── Entrance animations ── */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(50px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.animate-fade-in        { animation: fadeIn  1s ease 0.1s both; }
-.animate-fade-in-delay  { animation: fadeIn  1s ease 0.6s both; }
-.animate-slide-up       { animation: slideUp 1s ease 0.3s both; }
-
-/* ── Shimmer on CTA button ── */
+/* ── Button shimmer ── */
 @keyframes shimmer {
-  0%   { transform: translateX(-150%) skewX(-12deg); }
-  100% { transform: translateX(300%)  skewX(-12deg); }
+  0%   { transform: translateX(-150%) skewX(-15deg); }
+  100% { transform: translateX(300%)  skewX(-15deg); }
 }
-.btn-shimmer::after {
+.btn-shine::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.25) 50%, transparent 100%);
-  transform: translateX(-150%) skewX(-12deg);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+  transform: translateX(-150%) skewX(-15deg);
 }
-.btn-shimmer:hover::after {
-  animation: shimmer 0.6s ease forwards;
+.btn-shine:hover::after {
+  animation: shimmer 0.7s ease forwards;
 }
 
-/* ── Marquee ticker ── */
+/* ── Marquee (luxury/slow) ── */
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
@@ -85,11 +47,20 @@ body {
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee 20s linear infinite;
+  animation: marquee 35s linear infinite;
 }
 
+/* ── Entrance animations ── */
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-rise-in   { animation: riseIn 1.2s cubic-bezier(0.16,1,0.3,1) 0.15s both; }
+.animate-rise-in-2 { animation: riseIn 1.2s cubic-bezier(0.16,1,0.3,1) 0.35s both; }
+.animate-rise-in-3 { animation: riseIn 1.2s cubic-bezier(0.16,1,0.3,1) 0.55s both; }
+
 /* ── Custom scrollbar ── */
-::-webkit-scrollbar       { width: 4px; }
-::-webkit-scrollbar-track { background: #0a0a0a; }
-::-webkit-scrollbar-thumb { background: #C9A84C; border-radius: 2px; }
+::-webkit-scrollbar       { width: 3px; }
+::-webkit-scrollbar-track { background: #0c0b0b; }
+::-webkit-scrollbar-thumb { background: #c4a265; }
 
