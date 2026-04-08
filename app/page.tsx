@@ -2,445 +2,347 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="bg-[#0a0a0a] text-white min-h-screen">
+    <div className="bg-[#0c0b0b] text-[#f0ead8] min-h-screen">
 
-      {/* ══ NAVIGATION ══ */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-5 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/5">
-        <div className="text-xl font-black tracking-[0.35em] uppercase text-[#C9A84C]">
-          BLEND
+      {/* NAV */}
+      <nav className="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-8 md:px-14 h-20 bg-[#0c0b0b]/80 backdrop-blur-md border-b border-[#c4a265]/12">
+        <Image src="/images/logo.svg" alt="Pall Mall Barbers" width={150} height={42} priority className="brightness-0 invert" />
+        <div className="hidden md:flex items-center gap-10 text-[11px] tracking-[0.3em] uppercase text-[#f0ead8]/55">
+          <a href="#services" className="hover:text-[#c4a265] transition-colors">Services</a>
+          <a href="#gallery"  className="hover:text-[#c4a265] transition-colors">Gallery</a>
+          <a href="#about"    className="hover:text-[#c4a265] transition-colors">About</a>
+          <a href="#contact"  className="hover:text-[#c4a265] transition-colors">Contact</a>
         </div>
-        <div className="hidden md:flex items-center gap-8 text-xs tracking-[0.25em] uppercase text-zinc-400">
-          <a href="#services" className="hover:text-[#C9A84C] transition-colors duration-200">Services</a>
-          <a href="#about"    className="hover:text-[#C9A84C] transition-colors duration-200">About</a>
-          <a href="#gallery"  className="hover:text-[#C9A84C] transition-colors duration-200">Gallery</a>
-          <a href="#contact"  className="hover:text-[#C9A84C] transition-colors duration-200">Contact</a>
-        </div>
-        <a
-          href="https://www.blendmensgrooming.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-shimmer relative px-6 py-2.5 bg-[#C9A84C] text-black text-xs font-black tracking-[0.25em] uppercase overflow-hidden hover:bg-[#e0bc6e] transition-colors duration-200"
-        >
+        <a href="https://www.pallmallbarbers.nyc/" target="_blank" rel="noopener noreferrer"
+          className="btn-shine relative overflow-hidden px-7 py-3 border border-[#c4a265] text-[#c4a265] text-[10px] tracking-[0.35em] uppercase font-semibold hover:bg-[#c4a265] hover:text-[#0c0b0b] transition-colors duration-300">
           Book Now
         </a>
       </nav>
 
-      {/* ══ HERO ══ */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Layered background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#0f0f0f] to-[#1a1408]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(201,168,76,0.12),transparent_60%)]" />
-
-        {/* Animated vertical light rays */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="hero-line hero-line-1" />
-          <div className="hero-line hero-line-2" />
-          <div className="hero-line hero-line-3" />
+      {/* HERO */}
+      <section className="relative min-h-screen flex flex-col justify-end overflow-hidden">
+        <div className="absolute inset-0">
+          <Image src="/images/NYC-10.png" alt="Pall Mall Barbers New York" fill priority className="object-cover object-center" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0c0b0b] via-[#0c0b0b]/60 to-[#0c0b0b]/15" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0c0b0b]/70 to-transparent" />
         </div>
-
-        {/* Diagonal gold bar */}
-        <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-[#C9A84C]/30 to-transparent translate-x-0" style={{left: '62%'}} />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full flex flex-col lg:flex-row items-center gap-12 pt-24 pb-16">
-          {/* ── Left: copy ── */}
-          <div className="flex-1 text-center lg:text-left">
-            <p className="animate-fade-in text-[#C9A84C] text-xs tracking-[0.5em] uppercase mb-5">
-              Premium Men&apos;s Grooming
-            </p>
-            <h1 className="animate-slide-up text-7xl md:text-[7rem] xl:text-[9rem] font-black uppercase leading-[0.9] tracking-tight mb-8">
-              Look<br />
-              <span className="text-stroke">Sharp.</span><br />
-              Feel<br />
-              <span className="text-[#C9A84C]">Sharp.</span>
-            </h1>
-            <p className="animate-fade-in-delay text-zinc-500 text-base md:text-lg max-w-md mx-auto lg:mx-0 mb-10 leading-relaxed">
-              Where precision meets confidence. Expert barbers crafting the perfect cut, every single time.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a
-                href="https://www.blendmensgrooming.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-shimmer relative group px-10 py-4 bg-[#C9A84C] text-black font-black tracking-[0.2em] uppercase text-xs overflow-hidden hover:bg-[#e0bc6e] transition-colors duration-200"
-              >
-                Book Appointment
-              </a>
-              <a
-                href="#services"
-                className="px-10 py-4 border border-white/15 text-white font-bold tracking-[0.2em] uppercase text-xs hover:border-[#C9A84C] hover:text-[#C9A84C] transition-all duration-200"
-              >
-                Our Services
-              </a>
-            </div>
-
-            {/* Stats row */}
-            <div className="flex items-center gap-8 mt-14 justify-center lg:justify-start">
-              {heroStats.map((s) => (
-                <div key={s.label} className="text-center lg:text-left">
-                  <p className="text-[#C9A84C] text-3xl font-black leading-none">{s.value}</p>
-                  <p className="text-zinc-600 text-xs tracking-[0.2em] uppercase mt-1">{s.label}</p>
-                </div>
-              ))}
-            </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-14 w-full pb-24 md:pb-32">
+          <p className="animate-rise-in text-[#c4a265] text-[10px] tracking-[0.55em] uppercase mb-7">Est. 1896 · Rockefeller Center, New York City</p>
+          <h1 className="animate-rise-in-2 font-[family-name:var(--font-cormorant)] text-6xl md:text-8xl xl:text-[6.5rem] font-light italic leading-[1.05] max-w-4xl mb-10">
+            The Finest Cut.<br />The Perfect Shave.<br />
+            <span className="text-[#c4a265] not-italic font-medium">New York&apos;s Best.</span>
+          </h1>
+          <div className="animate-rise-in-3 flex flex-col sm:flex-row gap-4 mb-16">
+            <a href="https://www.pallmallbarbers.nyc/" target="_blank" rel="noopener noreferrer"
+              className="btn-shine relative overflow-hidden inline-flex items-center justify-center px-12 py-4 bg-[#c4a265] text-[#0c0b0b] text-[10px] tracking-[0.4em] uppercase font-bold hover:bg-[#d4b478] transition-colors">
+              Book Appointment
+            </a>
+            <a href="#services"
+              className="inline-flex items-center justify-center px-12 py-4 border border-[#f0ead8]/20 text-[#f0ead8]/65 text-[10px] tracking-[0.4em] uppercase hover:border-[#c4a265] hover:text-[#c4a265] transition-all duration-300">
+              Our Services
+            </a>
           </div>
-
-          {/* ── Right: hero photo ── */}
-          <div className="flex-shrink-0 relative w-72 md:w-80 lg:w-96">
-            {/* Decorative offset border */}
-            <div className="absolute inset-0 border border-[#C9A84C]/35 translate-x-4 translate-y-4" />
-            <div className="relative z-10 w-full overflow-hidden">
-              <Image
-                src="/images/IMG_3342_1768338918.webp"
-                alt="Blend Men's Grooming — expert barber"
-                width={2048}
-                height={2048}
-                priority
-                className="w-full h-auto object-cover"
-              />
-              {/* Bottom fade */}
-              <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-t from-[#0a0a0a] to-transparent z-20" />
-            </div>
+          <div className="flex flex-wrap gap-10 md:gap-16 border-t border-white/10 pt-10">
+            {heroStats.map((s) => (
+              <div key={s.label}>
+                <p className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-light text-[#c4a265]">{s.value}</p>
+                <p className="text-[10px] tracking-[0.3em] uppercase text-[#f0ead8]/35 mt-1">{s.label}</p>
+              </div>
+            ))}
           </div>
         </div>
-
-        {/* Scroll cue */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-zinc-700">
-          <span className="text-[10px] tracking-[0.4em] uppercase">Scroll</span>
-          <div className="w-px h-10 bg-gradient-to-b from-zinc-700 to-transparent animate-pulse" />
+        <div className="absolute bottom-8 right-10 flex flex-col items-center gap-2 z-10">
+          <p className="text-[9px] tracking-[0.4em] uppercase text-[#f0ead8]/25" style={{ writingMode: "vertical-rl" }}>Scroll</p>
+          <div className="w-px h-14 bg-gradient-to-b from-[#c4a265]/40 to-transparent" />
         </div>
       </section>
 
-      {/* ══ MARQUEE TICKER ══ */}
-      <div className="overflow-hidden border-y border-white/5 bg-[#C9A84C] py-3">
+      {/* MARQUEE */}
+      <div className="bg-[#c4a265] py-4 overflow-hidden">
         <div className="marquee-track">
-          {[...Array(8)].map((_, i) => (
-            <span key={i} className="flex items-center gap-6 pr-6 text-black text-xs font-black tracking-[0.3em] uppercase whitespace-nowrap">
-              PRECISION CUTS&nbsp;✦&nbsp;BEARD SCULPTS&nbsp;✦&nbsp;HOT TOWEL SHAVES&nbsp;✦&nbsp;FADES &amp; TAPERS&nbsp;✦&nbsp;
+          {[...Array(6)].map((_, i) => (
+            <span key={i} className="text-[#0c0b0b] text-[10px] font-bold tracking-[0.45em] uppercase whitespace-nowrap pr-8">
+              VOTED #1 BARBERSHOP NYC &nbsp;·&nbsp; EST. 1896 LONDON &nbsp;·&nbsp; ROCKEFELLER CENTER &nbsp;·&nbsp; AWARD-WINNING &nbsp;·&nbsp; 5-STAR GROOMING &nbsp;·&nbsp;
             </span>
           ))}
         </div>
       </div>
 
-      {/* ══ SERVICES ══ */}
-      <section id="services" className="py-32 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-20">
-            <p className="text-[#C9A84C] text-xs tracking-[0.4em] uppercase mb-3">What We Offer</p>
-            <div className="flex items-end justify-between flex-wrap gap-4">
-              <h2 className="text-5xl md:text-6xl font-black uppercase tracking-tight leading-none">
-                Our<br />Services
-              </h2>
-              <a
-                href="https://www.blendmensgrooming.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs tracking-[0.3em] uppercase text-zinc-500 hover:text-[#C9A84C] transition-colors border-b border-transparent hover:border-[#C9A84C] pb-0.5"
-              >
-                View Full Menu →
-              </a>
-            </div>
-            <div className="w-14 h-0.5 bg-[#C9A84C] mt-6" />
+      {/* HERITAGE SPLIT */}
+      <section id="about" className="grid grid-cols-1 lg:grid-cols-2">
+        <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[640px] overflow-hidden">
+          <Image src="/images/nyc-barbershop-1024x682.jpeg" alt="Pall Mall Barbers interior" fill className="object-cover hover:scale-105 transition-transform duration-1000" />
+        </div>
+        <div className="bg-[#111110] flex items-center px-10 md:px-16 xl:px-24 py-24">
+          <div className="max-w-md">
+            <span className="text-[#c4a265] text-[10px] tracking-[0.5em] uppercase">Our Heritage</span>
+            <h2 className="font-[family-name:var(--font-cormorant)] text-5xl md:text-6xl font-light italic mt-5 mb-8 leading-tight">
+              A Century of<br />Craft &amp; Precision
+            </h2>
+            <p className="text-[#f0ead8]/50 text-sm leading-8 mb-6">
+              Since 1896, Pall Mall Barbers has been the destination for discerning gentlemen. Our master barbers unite old-world technique with contemporary style.
+            </p>
+            <p className="text-[#f0ead8]/50 text-sm leading-8 mb-12">
+              Now at Rockefeller Center — the same uncompromising standards that defined our London heritage live on at the world&apos;s most iconic address.
+            </p>
+            <a href="https://www.pallmallbarbers.nyc/" target="_blank" rel="noopener noreferrer"
+              className="group inline-flex items-center gap-5 text-[10px] tracking-[0.4em] uppercase text-[#c4a265]">
+              Discover Our Story
+              <span className="block h-px w-10 bg-[#c4a265] group-hover:w-24 transition-all duration-500" />
+            </a>
           </div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5">
-            {services.map((service, i) => (
-              <div
-                key={i}
-                className="group relative bg-[#0a0a0a] p-10 hover:bg-[#0f0f0f] transition-all duration-300 cursor-pointer overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#C9A84C]/6 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      {/* SERVICES */}
+      <section id="services" className="py-28 px-8 md:px-14">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-end justify-between mb-16 flex-wrap gap-6 border-b border-white/6 pb-10">
+            <div>
+              <span className="text-[#c4a265] text-[10px] tracking-[0.5em] uppercase">What We Offer</span>
+              <h2 className="font-[family-name:var(--font-cormorant)] text-5xl md:text-6xl font-light italic mt-4">Our Services</h2>
+            </div>
+            <a href="https://www.pallmallbarbers.nyc/" target="_blank" rel="noopener noreferrer"
+              className="text-[10px] tracking-[0.35em] uppercase text-[#f0ead8]/35 hover:text-[#c4a265] transition-colors border-b border-transparent hover:border-[#c4a265] pb-1">
+              Full Menu →
+            </a>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 divide-x divide-y divide-white/5">
+            {services.map((s, i) => (
+              <div key={i} className="group relative p-10 hover:bg-[#111110] transition-colors duration-300 overflow-hidden cursor-pointer">
+                <span className="font-[family-name:var(--font-cormorant)] text-7xl font-light text-[#c4a265]/12 absolute -top-1 right-5 select-none leading-none">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
                 <div className="relative z-10">
-                  <div className="text-4xl mb-6">{service.icon}</div>
-                  <h3 className="text-lg font-black uppercase tracking-wider mb-3">{service.name}</h3>
-                  <p className="text-zinc-600 text-sm leading-relaxed mb-8">{service.description}</p>
+                  <h3 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium italic mb-3">{s.name}</h3>
+                  <p className="text-[#f0ead8]/40 text-xs leading-7 mb-10">{s.description}</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-[#C9A84C] font-black text-lg">{service.price}</span>
-                    <span className="text-zinc-700 text-xs tracking-[0.3em] uppercase group-hover:text-[#C9A84C] transition-colors duration-200">
-                      Book →
-                    </span>
+                    <span className="text-[#c4a265] text-sm font-semibold">{s.price}</span>
+                    <span className="text-[10px] tracking-[0.3em] uppercase text-[#f0ead8]/25 group-hover:text-[#c4a265] transition-colors">Book →</span>
                   </div>
                 </div>
-                {/* Bottom slide-in gold bar */}
-                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-[#C9A84C] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                <div className="absolute bottom-0 left-0 h-px w-0 bg-[#c4a265] group-hover:w-full transition-all duration-500" />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ══ GOLD FEATURE STRIP ══ */}
-      <section id="about" className="py-24 bg-[#C9A84C] text-black px-6 md:px-12">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-          {features.map((f, i) => (
-            <div key={i} className="flex flex-col items-center gap-4">
-              <span className="text-2xl font-black">{f.icon}</span>
-              <h3 className="text-xl font-black uppercase tracking-[0.2em]">{f.title}</h3>
-              <p className="text-black/65 text-sm leading-relaxed max-w-xs">{f.description}</p>
+      {/* AS SEEN IN */}
+      <section className="bg-[#111110] py-16 px-8 md:px-14">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-center text-[#f0ead8]/25 text-[9px] tracking-[0.6em] uppercase mb-10">As Seen In</p>
+          <Image src="/images/AS-SEEN-IN-1200-x-600.png" alt="As seen in press" width={1200} height={600}
+            className="w-full h-auto object-contain opacity-60 hover:opacity-90 transition-opacity duration-500" />
+        </div>
+      </section>
+
+      {/* GALLERY */}
+      <section id="gallery" className="py-24 px-8 md:px-14">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-[#c4a265] text-[10px] tracking-[0.5em] uppercase">Our Work</span>
+            <h2 className="font-[family-name:var(--font-cormorant)] text-5xl md:text-6xl font-light italic mt-4">The Pall Mall Effect</h2>
+            <div className="w-10 h-px bg-[#c4a265] mx-auto mt-7" />
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 auto-rows-[280px]">
+            {/* Portrait tall — row-span-2 */}
+            <div className="relative row-span-2 group overflow-hidden">
+              <Image src="/images/Shaves-683x1024.jpg.jpeg" alt="Hot towel shave" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0c0b0b]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            </div>
+            {/* Wide — col-span-2 */}
+            <div className="relative col-span-2 group overflow-hidden">
+              <Image src="/images/NYC-3.png" alt="Pall Mall Barbers NYC" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0c0b0b]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            </div>
+            {[
+              { src: "/images/barbershop-3-640x640.jpg.jpeg",                  alt: "Barbershop" },
+              { src: "/images/NYC-6.png",                                       alt: "NYC barbers" },
+              { src: "/images/rockefeller-centre-640x640.jpg.jpeg",             alt: "Rockefeller Center" },
+              { src: "/images/NYC-13.png",                                      alt: "NYC session" },
+              { src: "/images/barbershop-interior-with-Award-640x640.jpg.jpeg", alt: "Award-winning interior" },
+              { src: "/images/barbers-london-1024x683.jpg.jpeg",                alt: "Pall Mall London" },
+            ].map((img, i) => (
+              <div key={i} className="relative group overflow-hidden">
+                <Image src={img.src} alt={img.alt} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0c0b0b]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AWARDS + VIP */}
+      <section className="bg-[#111110] py-28 px-8 md:px-14">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div>
+            <span className="text-[#c4a265] text-[10px] tracking-[0.5em] uppercase">World-Class Excellence</span>
+            <h2 className="font-[family-name:var(--font-cormorant)] text-5xl font-light italic mt-5 mb-12 leading-tight">
+              Award-Winning<br />Barbershop
+            </h2>
+            <div className="grid grid-cols-2 gap-3 mb-10">
+              <div className="relative aspect-square overflow-hidden">
+                <Image src="/images/barber-shop-awards-640x640.png" alt="Barbershop awards" fill className="object-contain bg-[#0c0b0b] p-4" />
+              </div>
+              <div className="relative aspect-square overflow-hidden">
+                <Image src="/images/barbershop-interior-with-Award-1-640x640.jpg.jpeg" alt="Award interior" fill className="object-cover" />
+              </div>
+            </div>
+            <p className="text-[#f0ead8]/40 text-xs leading-8 max-w-md">
+              Recognised by the industry&apos;s most prestigious institutions — continuing the legacy of excellence that has made Pall Mall Barbers a global icon.
+            </p>
+          </div>
+          <div className="relative overflow-hidden">
+            <Image src="/images/Prince-William-640x640.png" alt="Prince William" width={640} height={640} className="w-full h-auto" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0c0b0b]/80 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-8">
+              <p className="text-[#c4a265] text-[10px] tracking-[0.45em] uppercase mb-2">Notable Clientele</p>
+              <p className="font-[family-name:var(--font-cormorant)] text-3xl font-light italic">Prince William</p>
+              <p className="text-[#f0ead8]/45 text-xs mt-1">The Prince of Wales</p>
+            </div>
+            <div className="absolute top-4 right-4 border-t border-r border-[#c4a265]/40 w-10 h-10" />
+            <div className="absolute bottom-4 left-4 border-b border-l border-[#c4a265]/40 w-10 h-10" />
+          </div>
+        </div>
+      </section>
+
+      {/* THREE PILLARS OVER IMAGE */}
+      <section className="relative py-40 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image src="/images/nyc-barbers-1024x576.png" alt="NYC barbers" fill className="object-cover" />
+          <div className="absolute inset-0 bg-[#0c0b0b]/82" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-14 grid grid-cols-1 md:grid-cols-3 gap-12">
+          {pillars.map((p, i) => (
+            <div key={i} className="group border-l-2 border-[#c4a265]/20 pl-8 hover:border-[#c4a265] transition-colors duration-300">
+              <span className="text-[#c4a265] text-[10px] tracking-[0.45em] uppercase">{p.label}</span>
+              <h3 className="font-[family-name:var(--font-cormorant)] text-3xl font-light italic mt-4 mb-5 leading-snug">{p.title}</h3>
+              <p className="text-[#f0ead8]/40 text-xs leading-7">{p.description}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ══ GALLERY ══ */}
-      <section id="gallery" className="py-32 px-6 md:px-12">
+      {/* TESTIMONIALS */}
+      <section className="py-28 px-8 md:px-14 bg-[#111110]">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <p className="text-[#C9A84C] text-xs tracking-[0.4em] uppercase mb-3">Our Work</p>
-            <h2 className="text-5xl md:text-6xl font-black uppercase tracking-tight">
-              The Blend Effect
-            </h2>
-            <div className="w-14 h-0.5 bg-[#C9A84C] mx-auto mt-6" />
+          <div className="text-center mb-16">
+            <span className="text-[#c4a265] text-[10px] tracking-[0.5em] uppercase">Client Voices</span>
+            <h2 className="font-[family-name:var(--font-cormorant)] text-5xl md:text-6xl font-light italic mt-4">What They Say</h2>
+            <div className="w-10 h-px bg-[#c4a265] mx-auto mt-7" />
           </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-1">
-            {galleryItems.map((item, i) => (
-              <div
-                key={i}
-                className={`relative group bg-zinc-900 overflow-hidden cursor-pointer ${item.tall ? 'row-span-2' : ''}`}
-              >
-                {item.src ? (
-                  <div className={`relative ${item.tall ? 'aspect-[1/1]' : 'aspect-square'} overflow-hidden`}>
-                    <Image
-                      src={item.src}
-                      alt={item.alt ?? "Blend Men's Grooming"}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#C9A84C]/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
-                ) : (
-                  <div className={`${item.tall ? 'aspect-[3/4]' : 'aspect-square'} bg-gradient-to-br from-zinc-800 to-zinc-900 hover:from-zinc-700 hover:to-zinc-800 transition-all duration-300 flex items-center justify-center`}>
-                    <div className="text-center opacity-30 group-hover:opacity-50 transition-opacity">
-                      <div className="text-3xl mb-2">📷</div>
-                      <p className="text-zinc-600 text-xs tracking-widest">{item.label}</p>
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#C9A84C]/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══ TESTIMONIALS ══ */}
-      <section className="py-32 bg-[#0d0d0d] px-6 md:px-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <p className="text-[#C9A84C] text-xs tracking-[0.4em] uppercase mb-3">Client Love</p>
-            <h2 className="text-5xl md:text-6xl font-black uppercase tracking-tight">What They Say</h2>
-            <div className="w-14 h-0.5 bg-[#C9A84C] mx-auto mt-6" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5">
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-x divide-y divide-white/5">
             {testimonials.map((t, i) => (
-              <div
-                key={i}
-                className="group relative bg-[#0d0d0d] p-10 hover:bg-[#111] transition-all duration-300 overflow-hidden"
-              >
-                <div className="text-[#C9A84C] text-6xl font-serif leading-none opacity-25 mb-2 select-none">&ldquo;</div>
-                <p className="text-zinc-500 text-sm leading-relaxed mb-8 italic">{t.text}</p>
+              <div key={i} className="group relative p-10 hover:bg-[#0c0b0b] transition-colors duration-300 overflow-hidden">
+                <div className="font-[family-name:var(--font-cormorant)] text-7xl font-light text-[#c4a265]/20 leading-none mb-3 select-none">&ldquo;</div>
+                <p className="text-[#f0ead8]/45 text-sm leading-8 italic mb-10">{t.text}</p>
                 <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 rounded-full bg-zinc-800 border border-[#C9A84C]/25 flex items-center justify-center text-base font-black text-[#C9A84C] flex-shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-[#1e1c18] border border-[#c4a265]/25 flex items-center justify-center font-[family-name:var(--font-cormorant)] text-lg text-[#c4a265]">
                     {t.name.charAt(0)}
                   </div>
                   <div>
-                    <p className="font-black text-xs uppercase tracking-[0.2em]">{t.name}</p>
-                    <div className="flex gap-0.5 mt-1.5">
-                      {[...Array(5)].map((_, s) => (
-                        <span key={s} className="text-[#C9A84C] text-xs">★</span>
-                      ))}
-                    </div>
+                    <p className="text-[10px] tracking-[0.25em] uppercase font-semibold">{t.name}</p>
+                    <div className="flex gap-0.5 mt-1">{[...Array(5)].map((_, s) => <span key={s} className="text-[#c4a265] text-[11px]">★</span>)}</div>
                   </div>
                 </div>
-                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-[#C9A84C] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                <div className="absolute bottom-0 left-0 h-px w-0 bg-[#c4a265] group-hover:w-full transition-all duration-500" />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ══ BOOKING CTA ══ */}
-      <section className="relative py-40 px-6 md:px-12 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#1a1408] to-[#0a0a0a]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(201,168,76,0.1),transparent_65%)]" />
-        <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <p className="text-[#C9A84C] text-xs tracking-[0.5em] uppercase mb-6">Ready for a change?</p>
-          <h2 className="text-6xl md:text-8xl xl:text-[9rem] font-black uppercase leading-[0.9] tracking-tight mb-8">
-            Book Your<br />
-            <span className="text-[#C9A84C]">Session</span>
+      {/* CTA */}
+      <section className="relative py-44 px-8 md:px-14 text-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0c0b0b] via-[#14110a] to-[#0c0b0b]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(196,162,101,0.09),transparent_65%)]" />
+        <div className="absolute top-10 left-10 w-16 h-16 border-t border-l border-[#c4a265]/20" />
+        <div className="absolute top-10 right-10 w-16 h-16 border-t border-r border-[#c4a265]/20" />
+        <div className="absolute bottom-10 left-10 w-16 h-16 border-b border-l border-[#c4a265]/20" />
+        <div className="absolute bottom-10 right-10 w-16 h-16 border-b border-r border-[#c4a265]/20" />
+        <div className="relative z-10 max-w-3xl mx-auto">
+          <span className="text-[#c4a265] text-[10px] tracking-[0.55em] uppercase">Your transformation awaits</span>
+          <h2 className="font-[family-name:var(--font-cormorant)] text-6xl md:text-8xl xl:text-[7.5rem] font-light italic mt-6 mb-6 leading-[1.05]">
+            Book Your<br /><span className="text-[#c4a265]">Appointment</span>
           </h2>
-          <p className="text-zinc-600 text-base md:text-lg mb-14 max-w-lg mx-auto leading-relaxed">
-            Join hundreds of satisfied clients. Your best look is one appointment away.
+          <p className="text-[#f0ead8]/40 text-sm max-w-md mx-auto leading-8 mb-14">
+            Rockefeller Center, New York City. Monday to Sunday. Walk-ins welcome — appointments preferred.
           </p>
-          <a
-            href="https://www.blendmensgrooming.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-shimmer relative inline-block px-16 py-5 bg-[#C9A84C] text-black font-black text-xs tracking-[0.35em] uppercase overflow-hidden hover:bg-[#e0bc6e] transition-colors duration-200 hover:scale-105 transition-transform"
-          >
-            Book Now at BlendMensGrooming.com
+          <a href="https://www.pallmallbarbers.nyc/" target="_blank" rel="noopener noreferrer"
+            className="btn-shine relative overflow-hidden inline-flex items-center px-14 py-5 bg-[#c4a265] text-[#0c0b0b] text-[11px] tracking-[0.4em] uppercase font-bold hover:bg-[#d4b478] transition-colors">
+            Book at pallmallbarbers.nyc
           </a>
         </div>
       </section>
 
-      {/* ══ FOOTER ══ */}
-      <footer id="contact" className="bg-[#050505] border-t border-white/5 py-20 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-          {/* Brand */}
+      {/* FOOTER */}
+      <footer id="contact" className="bg-[#080807] border-t border-white/5 pt-20 pb-10 px-8 md:px-14">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2">
-            <div className="mb-4">
-              <Image
-                src="/images/410850cbfc5e311b8e0d6e413c490fc8.jpeg"
-                alt="Blend Men's Grooming"
-                width={148}
-                height={75}
-                className="object-contain"
-              />
-            </div>
-            <p className="text-zinc-700 text-sm leading-relaxed max-w-xs mb-8">
-              Premium men&apos;s grooming where every cut tells a story. Precision, style, and confidence — all in one chair.
-            </p>
-            <div className="flex gap-3">
-              {['IG', 'FB', 'TW'].map((s) => (
-                <div
-                  key={s}
-                  className="w-9 h-9 border border-white/10 flex items-center justify-center text-[10px] font-black text-zinc-600 hover:border-[#C9A84C] hover:text-[#C9A84C] transition-all cursor-pointer tracking-wider"
-                >
-                  {s}
-                </div>
+            <Image src="/images/logo.svg" alt="Pall Mall Barbers" width={160} height={45} className="brightness-0 invert mb-7 opacity-70" />
+            <p className="text-[#f0ead8]/28 text-xs leading-7 max-w-xs mb-10">The world&apos;s most acclaimed barbershop. Heritage, precision, and style since 1896.</p>
+            <div className="flex gap-2">
+              {["IG","FB","X","YT"].map((s) => (
+                <div key={s} className="w-9 h-9 border border-white/8 flex items-center justify-center text-[9px] text-[#f0ead8]/30 hover:border-[#c4a265] hover:text-[#c4a265] transition-all tracking-wider cursor-pointer">{s}</div>
               ))}
             </div>
           </div>
-
-          {/* Services */}
           <div>
-            <h4 className="text-[10px] tracking-[0.35em] uppercase text-zinc-600 mb-6">Services</h4>
-            <ul className="space-y-3 text-sm text-zinc-700">
-              {['Haircut', 'Beard Trim', 'Hot Towel Shave', 'Colour', 'Kids Cut', 'VIP Package'].map((s) => (
-                <li key={s} className="hover:text-[#C9A84C] transition-colors cursor-pointer">{s}</li>
+            <h4 className="text-[9px] tracking-[0.45em] uppercase text-[#f0ead8]/25 mb-7">Services</h4>
+            <ul className="space-y-3">
+              {["Haircut & Style","Hot Towel Shave","Beard Sculpt","Colour","Grand Package"].map((s) => (
+                <li key={s} className="text-xs text-[#f0ead8]/40 hover:text-[#c4a265] transition-colors cursor-pointer">{s}</li>
               ))}
             </ul>
           </div>
-
-          {/* Hours */}
           <div>
-            <h4 className="text-[10px] tracking-[0.35em] uppercase text-zinc-600 mb-6">Visit Us</h4>
-            <div className="space-y-3 text-sm text-zinc-700">
-              <p>Mon – Sat: 9am – 7pm</p>
-              <p>Sunday: 10am – 5pm</p>
-              <div className="pt-4">
-                <a
-                  href="https://www.blendmensgrooming.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#C9A84C] hover:underline text-sm"
-                >
-                  blendmensgrooming.com →
-                </a>
+            <h4 className="text-[9px] tracking-[0.45em] uppercase text-[#f0ead8]/25 mb-7">Visit</h4>
+            <div className="space-y-2 text-xs text-[#f0ead8]/40">
+              <p>45 Rockefeller Plaza</p>
+              <p>New York, NY 10111</p>
+              <div className="pt-3 space-y-1">
+                <p>Mon–Fri: 8am – 8pm</p>
+                <p>Sat: 9am – 6pm</p>
+                <p>Sun: 10am – 5pm</p>
               </div>
+              <a href="https://www.pallmallbarbers.nyc/" target="_blank" rel="noopener noreferrer" className="block pt-5 text-[#c4a265] hover:underline">pallmallbarbers.nyc →</a>
             </div>
           </div>
         </div>
-
-        <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-zinc-800 text-[10px] tracking-[0.3em] uppercase">
-            © 2026 BLEND MEN&apos;S GROOMING. ALL RIGHTS RESERVED.
-          </p>
-          <p className="text-zinc-800 text-[10px] tracking-[0.3em] uppercase">CRAFTED WITH PRECISION</p>
+        <div className="max-w-7xl mx-auto border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between gap-3">
+          <p className="text-[9px] tracking-[0.3em] uppercase text-[#f0ead8]/18">© 2026 Pall Mall Barbers NYC. All Rights Reserved.</p>
+          <p className="text-[9px] tracking-[0.3em] uppercase text-[#f0ead8]/18">Est. 1896 · London · New York City</p>
         </div>
       </footer>
     </div>
   );
 }
 
-/* ── Data ── */
-
 const heroStats = [
-  { value: "500+", label: "Happy Clients" },
-  { value: "10+",  label: "Yrs Experience" },
-  { value: "5★",   label: "Rated" },
+  { value: "128+", label: "Years Heritage" },
+  { value: "50k+", label: "Happy Clients" },
+  { value: "15+",  label: "Awards Won" },
+  { value: "5 ★",  label: "Rated NYC" },
 ];
 
 const services = [
-  {
-    icon: "✂️",
-    name: "Classic Cut",
-    description: "A timeless precision haircut tailored to your face shape and style preferences.",
-    price: "From £25",
-  },
-  {
-    icon: "🪒",
-    name: "Hot Towel Shave",
-    description: "The ultimate wet shave experience with hot towel prep and straight razor finish.",
-    price: "From £30",
-  },
-  {
-    icon: "🧔",
-    name: "Beard Sculpt",
-    description: "Expert beard shaping, trimming, and styling to keep you looking sharp every day.",
-    price: "From £15",
-  },
-  {
-    icon: "💈",
-    name: "Fade & Taper",
-    description: "Seamless skin fades and clean tapers with surgical precision at every level.",
-    price: "From £28",
-  },
-  {
-    icon: "🎨",
-    name: "Colour & Highlights",
-    description: "Premium colouring services from subtle grey blending to bold transformations.",
-    price: "From £45",
-  },
-  {
-    icon: "👑",
-    name: "VIP Package",
-    description: "The full Blend experience — cut, beard, hot towel shave, and premium styling.",
-    price: "From £65",
-  },
+  { name: "Signature Haircut",  description: "A precise, bespoke cut tailored to your face shape and hair type by a master barber.", price: "From $65" },
+  { name: "Hot Towel Shave",    description: "Pre-shave oils, steaming towel wrap, premium lather and a straight razor — the pinnacle of wet shaving.", price: "From $75" },
+  { name: "Beard Sculpt",       description: "Expert shaping and detailing to keep your beard looking intentional and impeccably groomed.", price: "From $45" },
+  { name: "Cut & Shave Combo",  description: "The complete gentleman's package — a precision cut followed by a full luxury hot towel shave.", price: "From $120" },
+  { name: "Colour & Texture",   description: "From subtle grey blending to bold all-over colour, applied with Pall Mall precision.", price: "From $85" },
+  { name: "The Grand Package",  description: "Haircut, beard sculpt, hot towel shave, scalp massage and premium styling. The full experience.", price: "From $175" },
 ];
 
-const features = [
-  {
-    icon: "✦",
-    title: "Expert Barbers",
-    description: "Highly trained specialists with years of experience in modern and classic men's cuts.",
-  },
-  {
-    icon: "✦",
-    title: "Premium Products",
-    description: "We only use top-tier grooming products for the best results and salon experience.",
-  },
-  {
-    icon: "✦",
-    title: "Easy Booking",
-    description: "Book your slot online in seconds at blendmensgrooming.com. No waiting, no hassle.",
-  },
-];
-
-const galleryItems = [
-  { label: "gallery-1", tall: true,  src: "/images/IMG_3342_1768338918.webp", alt: "Blend barber at work" },
-  { label: "gallery-2", tall: false, src: "/images/IMG_3342_1768338918.webp", alt: "Precision fade" },
-  { label: "gallery-3", tall: false, src: "/images/IMG_3342_1768338918.webp", alt: "Sharp cut" },
-  { label: "gallery-4", tall: false, src: "/images/IMG_3342_1768338918.webp", alt: "Beard sculpt" },
-  { label: "gallery-5", tall: false, src: "/images/IMG_3342_1768338918.webp", alt: "Clean taper" },
-  { label: "gallery-6", tall: true,  src: "/images/IMG_3342_1768338918.webp", alt: "Hot towel shave" },
-  { label: "gallery-7", tall: false, src: "/images/IMG_3342_1768338918.webp", alt: "Style finish" },
-  { label: "gallery-8", tall: false, src: "/images/IMG_3342_1768338918.webp", alt: "The blend effect" },
+const pillars = [
+  { label: "Location",     title: "Heart of Manhattan",  description: "45 Rockefeller Plaza — steps from Fifth Avenue and Central Park, at the most iconic address in New York City." },
+  { label: "The Craft",    title: "Master Barbers",      description: "Each barber undergoes rigorous training to deliver the Pall Mall standard — the best in precision grooming." },
+  { label: "The Heritage", title: "Est. 1896, London",   description: "Over a century of expertise brought to New York. The timeless artistry that made Pall Mall Barbers famous worldwide." },
 ];
 
 const testimonials = [
-  {
-    text: "Best barbershop experience I've ever had. The fade was perfect and the hot towel shave was next level. Won't go anywhere else.",
-    name: "James K.",
-  },
-  {
-    text: "The attention to detail here is insane. They really listen to what you want and deliver every single time. Highly recommend.",
-    name: "Marcus T.",
-  },
-  {
-    text: "Incredible atmosphere, incredibly skilled barbers. I always leave feeling like a completely different person — in the best way.",
-    name: "Daniel R.",
-  },
+  { text: "The hot towel shave was unlike anything I have experienced. Meticulous, relaxing, extraordinary results. This is the only place I will ever visit.", name: "James W." },
+  { text: "Impeccable attention to detail. The barbers genuinely listen and deliver something personalised and perfect every single time.", name: "Marcus T." },
+  { text: "Walking into Pall Mall Barbers is an experience in itself. The skill of their team and the heritage of the brand is felt in every visit.", name: "Daniel R." },
 ];
